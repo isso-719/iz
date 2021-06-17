@@ -1,0 +1,22 @@
+#!/bin/sh
+if [[ "$1" = *".iz" ]]; then
+    CURRENT_DIR=$(cd $(dirname $0);pwd)
+    python3 iz.py $CURRENT_DIR/$1
+
+elif [ "$1" = "" -o "$1" = "--about" -o "$1" = "-a" ]; then
+    echo ""
+    echo "This is the programming language."
+    echo 'Named "iz".'
+    echo "version: 0(Legacy)"
+    echo ""
+
+elif [ "$1" = "--python" -o "$1" = "python" -o "$1" = "-p" ]; then
+    echo ""
+    echo "This language used..."
+    python3 --version
+    echo ""
+
+else
+    echo "iz: command not found."
+
+fi
